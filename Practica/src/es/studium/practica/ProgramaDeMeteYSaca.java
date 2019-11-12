@@ -10,8 +10,7 @@ import java.util.Scanner;
 public class ProgramaDeMeteYSaca {
 	public static void main(String[] args) {
 		ArrayList <ListaDeLaCompra> arrayGuardarListas = new ArrayList <ListaDeLaCompra>();
-		Scanner lee = new Scanner(System.in);
-		arrayGuardarListas=(programaDeMeteYSaca(lee));
+		arrayGuardarListas=(programaDeMeteYSaca());
 		programaDeGuardado(arrayGuardarListas);
 		imprimirRecibido();
 	}
@@ -50,17 +49,19 @@ public class ProgramaDeMeteYSaca {
 			System.out.println(e.getMessage());
 		}
 	}
-	private static ArrayList<ListaDeLaCompra> programaDeMeteYSaca(Scanner lee) {
+	private static ArrayList<ListaDeLaCompra> programaDeMeteYSaca() {
 		Boolean confirmacion;
 		int a;
 		int i;
 		confirmacion=false;
 		Boolean confirmacion2=false;
 		a=1;
+		
 		ArrayList<ListaDeLaCompra> listillas = new ArrayList<ListaDeLaCompra>();
+		Scanner lee = new Scanner(System.in);
 		while(confirmacion2==false) {
 			System.out.println("Escriba el nombre de la lista nº"+a);
-			String listaNombre=lee.nextLine();
+			String listaNombre=lee.next();
 			ArrayList<ArticuloAComprar> articulos =new ArrayList <ArticuloAComprar>(); 
 			i=1;
 			confirmacion=false;
